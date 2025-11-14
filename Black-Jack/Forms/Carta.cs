@@ -14,10 +14,14 @@ namespace Black_Jack.Forms
     public partial class Carta : UserControl
     {
         public bool lleno = false;
+        public string exeDir = AppDomain.CurrentDomain.BaseDirectory;
+
 
         public Carta()
         {
             InitializeComponent();
+            string filePath = Path.Combine(exeDir, "../../../reverso.jpg");
+            this.BackgroundImage = Image.FromFile(filePath);
         }
 
         public void Load(Cartas carta)
@@ -66,6 +70,8 @@ namespace Black_Jack.Forms
             lbPalo.Text = "";
             lbPalo2.Text = "";
             lleno = false;
+            string filePath = Path.Combine(exeDir, "../../../reverso.jpg");
+            this.BackgroundImage = Image.FromFile(filePath);
         }
     }
 }
