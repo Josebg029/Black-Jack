@@ -20,8 +20,7 @@ namespace Black_Jack.Forms
         public Carta()
         {
             InitializeComponent();
-            string filePath = Path.Combine(exeDir, "../../../reverso.jpg");
-            this.BackgroundImage = Image.FromFile(filePath);
+            Visible = false;
         }
 
         public void Load(Cartas carta)
@@ -32,22 +31,36 @@ namespace Black_Jack.Forms
             if (carta.Id == 11)
             {
                 lbNumero.Text = "J";
+                lbNumero2.Text = "J";
+                lbNumero3.Text = "J";
             }
             else if (carta.Id == 12)
             {
                 lbNumero.Text = "Q";
+                lbNumero2.Text = "Q";
+                lbNumero3.Text = "Q";
+
             }
             else if (carta.Id == 13)
             {
                 lbNumero.Text = "K";
+                lbNumero2.Text = "K";
+                lbNumero3.Text = "K";
+
             }
             else if (carta.Id == 1)
             {
                 lbNumero.Text = "A";
+                lbNumero2.Text = "A";
+                lbNumero3.Text = "A";
+
             }
             else
             {
                 lbNumero.Text = carta.Id.ToString();
+                lbNumero2.Text = carta.Id.ToString();
+                lbNumero3.Text = carta.Id.ToString();
+
             }
 
             if (carta.Palo.Equals("♣") || carta.Palo.Equals("♠"))
@@ -60,8 +73,8 @@ namespace Black_Jack.Forms
                 lbPalo.ForeColor = Color.Red;
                 lbPalo2.ForeColor = Color.Red;
             }
-            this.BackgroundImage = null;
             lleno = true;
+            Visible = true;
         }
 
         public void reset()
@@ -70,8 +83,9 @@ namespace Black_Jack.Forms
             lbPalo.Text = "";
             lbPalo2.Text = "";
             lleno = false;
-            string filePath = Path.Combine(exeDir, "../../../reverso.jpg");
-            this.BackgroundImage = Image.FromFile(filePath);
+            Visible = false;
+            lbNumero2.Text = "";
+            lbNumero3.Text = "";
         }
     }
 }

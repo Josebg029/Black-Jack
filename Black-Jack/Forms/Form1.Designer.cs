@@ -30,7 +30,6 @@
         {
             btnSacarCarta = new Button();
             lbValor = new Label();
-            btnReset = new Button();
             carta1 = new Black_Jack.Forms.Carta();
             carta2 = new Black_Jack.Forms.Carta();
             carta3 = new Black_Jack.Forms.Carta();
@@ -50,7 +49,7 @@
             // 
             // btnSacarCarta
             // 
-            btnSacarCarta.Location = new Point(12, 264);
+            btnSacarCarta.Location = new Point(12, 337);
             btnSacarCarta.Name = "btnSacarCarta";
             btnSacarCarta.Size = new Size(107, 49);
             btnSacarCarta.TabIndex = 0;
@@ -61,120 +60,121 @@
             // lbValor
             // 
             lbValor.AutoSize = true;
-            lbValor.Location = new Point(12, 231);
+            lbValor.Location = new Point(12, 304);
             lbValor.Name = "lbValor";
             lbValor.Size = new Size(33, 15);
             lbValor.TabIndex = 2;
             lbValor.Text = "Valor";
             // 
-            // btnReset
-            // 
-            btnReset.Location = new Point(125, 290);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(75, 23);
-            btnReset.TabIndex = 4;
-            btnReset.Text = "Reiniciar";
-            btnReset.UseVisualStyleBackColor = true;
-            btnReset.Click += btnReset_Click;
-            // 
             // carta1
             // 
             carta1.BorderStyle = BorderStyle.FixedSingle;
-            carta1.Location = new Point(12, 329);
+            carta1.Location = new Point(10, 402);
             carta1.Name = "carta1";
             carta1.Size = new Size(79, 109);
             carta1.TabIndex = 5;
+            carta1.Visible = false;
             // 
             // carta2
             // 
             carta2.BorderStyle = BorderStyle.FixedSingle;
-            carta2.Location = new Point(97, 329);
+            carta2.Location = new Point(40, 402);
             carta2.Name = "carta2";
             carta2.Size = new Size(79, 109);
             carta2.TabIndex = 6;
+            carta2.Visible = false;
             // 
             // carta3
             // 
             carta3.BorderStyle = BorderStyle.FixedSingle;
-            carta3.Location = new Point(182, 329);
+            carta3.Location = new Point(70, 402);
             carta3.Name = "carta3";
             carta3.Size = new Size(79, 109);
-            carta3.TabIndex = 8;
+            carta3.TabIndex = 7;
+            carta3.Visible = false;
             // 
             // carta4
             // 
             carta4.BorderStyle = BorderStyle.FixedSingle;
-            carta4.Location = new Point(267, 329);
+            carta4.Location = new Point(100, 402);
             carta4.Name = "carta4";
             carta4.Size = new Size(79, 109);
-            carta4.TabIndex = 7;
+            carta4.TabIndex = 8;
+            carta4.Visible = false;
             // 
             // carta5
             // 
             carta5.BorderStyle = BorderStyle.FixedSingle;
-            carta5.Location = new Point(352, 329);
+            carta5.Location = new Point(130, 402);
             carta5.Name = "carta5";
             carta5.Size = new Size(79, 109);
-            carta5.TabIndex = 12;
+            carta5.TabIndex = 9;
+            carta5.Visible = false;
             // 
             // carta6
             // 
             carta6.BorderStyle = BorderStyle.FixedSingle;
-            carta6.Location = new Point(437, 329);
+            carta6.Location = new Point(160, 402);
             carta6.Name = "carta6";
             carta6.Size = new Size(79, 109);
-            carta6.TabIndex = 11;
+            carta6.TabIndex = 10;
+            carta6.Visible = false;
             // 
             // carta7
             // 
             carta7.BorderStyle = BorderStyle.FixedSingle;
-            carta7.Location = new Point(522, 329);
+            carta7.Location = new Point(190, 402);
             carta7.Name = "carta7";
             carta7.Size = new Size(79, 109);
-            carta7.TabIndex = 10;
+            carta7.TabIndex = 11;
+            carta7.Visible = false;
             // 
             // carta8
             // 
             carta8.BorderStyle = BorderStyle.FixedSingle;
-            carta8.Location = new Point(607, 329);
+            carta8.Location = new Point(220, 402);
             carta8.Name = "carta8";
             carta8.Size = new Size(79, 109);
-            carta8.TabIndex = 9;
+            carta8.TabIndex = 12;
+            carta8.Visible = false;
             // 
             // carta9
             // 
             carta9.BorderStyle = BorderStyle.FixedSingle;
-            carta9.Location = new Point(692, 329);
+            carta9.Location = new Point(250, 402);
             carta9.Name = "carta9";
             carta9.Size = new Size(79, 109);
-            carta9.TabIndex = 15;
+            carta9.TabIndex = 13;
+            carta9.Visible = false;
             // 
             // carta10
             // 
             carta10.BorderStyle = BorderStyle.FixedSingle;
-            carta10.Location = new Point(777, 329);
+            carta10.Location = new Point(280, 402);
             carta10.Name = "carta10";
             carta10.Size = new Size(79, 109);
             carta10.TabIndex = 14;
+            carta10.Visible = false;
             // 
             // carta11
             // 
             carta11.BorderStyle = BorderStyle.FixedSingle;
-            carta11.Location = new Point(862, 329);
+            carta11.Location = new Point(310, 402);
             carta11.Name = "carta11";
             carta11.Size = new Size(79, 109);
-            carta11.TabIndex = 13;
+            carta11.TabIndex = 15;
+            carta11.Visible = false;
             // 
             // txtCreditos
             // 
-            txtCreditos.Location = new Point(326, 261);
+            txtCreditos.Location = new Point(289, 337);
             txtCreditos.Name = "txtCreditos";
             txtCreditos.Size = new Size(100, 23);
             txtCreditos.TabIndex = 16;
             // 
             // txtApuesta
             // 
-            txtApuesta.Location = new Point(326, 290);
+            txtApuesta.Location = new Point(289, 366);
             txtApuesta.Name = "txtApuesta";
             txtApuesta.Size = new Size(100, 23);
             txtApuesta.TabIndex = 17;
@@ -182,7 +182,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(267, 264);
+            label1.Location = new Point(230, 340);
             label1.Name = "label1";
             label1.Size = new Size(54, 15);
             label1.TabIndex = 18;
@@ -191,7 +191,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(267, 293);
+            label2.Location = new Point(230, 369);
             label2.Name = "label2";
             label2.Size = new Size(53, 15);
             label2.TabIndex = 19;
@@ -201,23 +201,22 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(953, 450);
+            ClientSize = new Size(400, 521);
+            Controls.Add(carta11);
+            Controls.Add(carta10);
+            Controls.Add(carta9);
+            Controls.Add(carta8);
+            Controls.Add(carta7);
+            Controls.Add(carta6);
+            Controls.Add(carta5);
+            Controls.Add(carta4);
+            Controls.Add(carta3);
+            Controls.Add(carta2);
+            Controls.Add(carta1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtApuesta);
             Controls.Add(txtCreditos);
-            Controls.Add(carta9);
-            Controls.Add(carta10);
-            Controls.Add(carta11);
-            Controls.Add(carta5);
-            Controls.Add(carta6);
-            Controls.Add(carta7);
-            Controls.Add(carta8);
-            Controls.Add(carta3);
-            Controls.Add(carta4);
-            Controls.Add(carta2);
-            Controls.Add(carta1);
-            Controls.Add(btnReset);
             Controls.Add(lbValor);
             Controls.Add(btnSacarCarta);
             Name = "Form1";
@@ -230,7 +229,6 @@
 
         private Button btnSacarCarta;
         private Label lbValor;
-        private Button btnReset;
         private Forms.Carta carta1;
         private Forms.Carta carta2;
         private Forms.Carta carta3;
