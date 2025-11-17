@@ -55,9 +55,12 @@ namespace Black_Jack
                         carta2.BackgroundImage = null;
                         Cartas Carta = CartasService.SacarCarta();
                         Cartas Carta2 = CartasService.SacarCarta();
+                        mano.Add(Carta);
+                        mano.Add(Carta2);
                         carta2.BringToFront();
                         carta1.Load(Carta);
                         carta2.Load(Carta2);
+                        validacionAs();
 
                         SumaTotal += Carta.Valor + Carta2.Valor;
 
@@ -65,6 +68,9 @@ namespace Black_Jack
                     }
                     else {
                         Cartas carta = CartasService.SacarCarta();
+                        mano.Add(carta);
+                        SumaTotal += carta.Valor;
+                        validacionAs();
 
                         if (carta3.lleno == false)
                         {
@@ -111,10 +117,9 @@ namespace Black_Jack
                             carta11.Load(carta);
                             carta11.BringToFront();
                         }
-                        SumaTotal += carta.Valor;
                     }
-
                     lbValor.Text = "Suma: " + SumaTotal.ToString();
+
 
                     if (SumaTotal == 21)
                     {
@@ -126,6 +131,7 @@ namespace Black_Jack
                         MessageBox.Show("Perdedor");
                         refresh();
                     }
+
                 }
             }
         }
@@ -133,7 +139,7 @@ namespace Black_Jack
         private void refresh()
         {
             SumaTotal = 0;
-            lbValor.Text = "";
+            lbValor.Text = "Suma: ";
             carta1.reset();
             carta2.reset();
             carta3.reset();
@@ -153,5 +159,18 @@ namespace Black_Jack
             carta2.Visible = true;
         }
 
+        private void validacionAs()
+        {
+            foreach (Cartas carta in mano)
+            {
+                if (carta.Id == 1)
+                {
+                    if ((SumaTotal + carta.Valor) < 21)
+                    {
+                        SumaTotal += 11;
+                    }
+                }
+            }
+        }
     }
 }
