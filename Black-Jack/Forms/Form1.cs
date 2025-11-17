@@ -3,6 +3,7 @@ using Black_Jack.Forms;
 using Black_Jack.Servicios;
 using System.Collections;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Black_Jack
 {
@@ -54,15 +55,17 @@ namespace Black_Jack
                         carta1.BackgroundImage = null;
                         carta2.BackgroundImage = null;
                         Cartas Carta = CartasService.SacarCarta();
-                        Cartas Carta2 = CartasService.SacarCarta();
                         mano.Add(Carta);
+                        validacionAs();
+                        Cartas Carta2 = CartasService.SacarCarta();
                         mano.Add(Carta2);
+                        validacionAs();
+
+
                         carta2.BringToFront();
                         carta1.Load(Carta);
                         carta2.Load(Carta2);
-                        validacionAs();
-
-                        SumaTotal += Carta.Valor + Carta2.Valor;
+                        
 
                         inGame = true;
                     }
@@ -118,6 +121,8 @@ namespace Black_Jack
                             carta11.BringToFront();
                         }
                     }
+                    validacionAs();
+
                     lbValor.Text = "Suma: " + SumaTotal.ToString();
 
 
@@ -157,19 +162,38 @@ namespace Black_Jack
             carta2.BackgroundImage = Properties.Resources.reverso;
             carta1.Visible = true;
             carta2.Visible = true;
+            mano.Clear();
         }
 
         private void validacionAs()
         {
-            foreach (Cartas carta in mano)
+            
+            if (SumaTotal < 21)
             {
-                if (carta.Id == 1)
+                foreach (Cartas carta in mano)
                 {
-                    if ((SumaTotal + carta.Valor) < 21)
+                    if (carta.Id == 1 && ((SumaTotal + carta.Valor) < 21))
                     {
-                        SumaTotal += 11;
+                        carta.Valor = 11;
                     }
                 }
+            }
+            else if (SumaTotal >= 21)
+            {
+                foreach (Cartas carta in mano)
+                {
+                    if (carta.Id == 1 && ((SumaTotal + carta.Valor) >= 21))
+                    {
+                        carta.Valor = 1;
+                    }
+                }
+            }
+
+
+            SumaTotal = 0;
+            foreach (Cartas carta in mano)
+            {
+                SumaTotal += carta.Valor;
             }
         }
     }

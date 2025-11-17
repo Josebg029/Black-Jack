@@ -82,6 +82,7 @@ namespace Black_Jack.Servicios
             int palo = int.Parse(Rpalo.Next(1, 5).ToString());
             int valor = int.Parse(Rvalor.Next(0, 13).ToString());
 
+
             switch (palo)
             {
                 case 1:
